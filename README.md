@@ -1,2 +1,2 @@
-# Baker-Street-Boys
-## Computer Organization and Architecture Project
+## Baker-Street-Boys
+### Computer Organization and Architecture Project
