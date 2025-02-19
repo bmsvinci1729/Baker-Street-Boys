@@ -2,10 +2,11 @@
 #define MEMORY_H
 
 #include <vector>
+using namespace std;
 
 class Memory {
 public:
-    std::vector<int> memory;  // Simulated memory (4KB total)
+    vector<int> memory;  // Simulated memory (4KB total)
     
     Memory(int size);
     
