@@ -13,6 +13,7 @@ struct CPU {
     int registers[NUM_REGS] = {0};  // registers value set to zero
     unordered_map<string, int> reg_map; // what is this for?
     int pc;  // Program Counter (PC)
+    vector <int*> cpu_memory; // Memory for CPU
 
     CPU(int id);
     void executeInstruction(const std::string& opcode, const std::vector<std::string>& operands, const std::unordered_map<std::string, int>& label_map);

@@ -4,7 +4,15 @@
 #include "parser.h"
 #include <iostream>
 
-Simulator::Simulator() : cores{CPU(0), CPU(1), CPU(2), CPU(3)}, memory(4096) {}
+Simulator::Simulator() : cores{CPU(0), CPU(1), CPU(2), CPU(3)}, memory(4096) {
+    for (int i = 0; i < 4; i++) {
+        auto start = memory.memory.begin()+i*1024;
+        auto end = memory.memory.begin()+(i+1)*1024;
+
+        for (auto it = start; it != end; ++it)
+            cores[i].cpu_memory.push_back(&(*it));
+    }
+}
 
 void Simulator::loadInstructions(ParsedProgram parsedProgram) {
     instructions = parsedProgram.instructions;
